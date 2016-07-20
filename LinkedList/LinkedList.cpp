@@ -228,3 +228,26 @@ bool LinkedList::Back(void* item, const size_t& item_size)
 
 	return ret;
 }
+
+void LinkedList::BeginInterate()
+{
+	current = head;
+}
+
+bool LinkedList::Next(void* item, const size_t& item_size)
+{
+	bool ret = false;
+
+	if (current != NULL)
+	{
+		if (item != NULL)
+		{
+			memcpy(item, current->pdata, item_size);
+			current = current->next;
+
+			ret = true;
+		}
+	}
+
+	return ret;
+}
