@@ -24,6 +24,7 @@ private:
 	size_t list_size;
 	Link_Node* head;
 	Link_Node* tail;
+	Link_Node* current;
 
 	Link_Node* NewNode(const void* item, const size_t& item_size);
 	void ReleaseNode(LinkedList::Link_Node* Node);
@@ -44,6 +45,9 @@ public:
 	
 	bool Front(void* item, const size_t& item_size);
 	bool Back(void* item, const size_t& item_size);
+
+	void BeginInterate();
+	bool Next(void* item, const size_t& item_size);
 };
 
 #endif
